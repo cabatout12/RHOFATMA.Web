@@ -1,0 +1,18 @@
+@model RHOFATMA.Web.Models.TblAbsentRetard
+@{ ViewData["Title"] = "Supprimer absence/retard"; }
+
+<h1 class="h3">Supprimer absence/retard</h1>
+<p class="text-danger">Voulez-vous vraiment supprimer cette absence/retard?</p>
+<dl class="row">
+    <dt class="col-sm-3">Employe</dt>
+    <dd class="col-sm-9">@Model.IdEmployeNavigation.NomEmploye @Model.IdEmployeNavigation.PrenomEmploye</dd>
+    <dt class="col-sm-3">Date</dt>
+    <dd class="col-sm-9">@Model.DateRetard.ToString("yyyy-MM-dd")</dd>
+    <dt class="col-sm-3">Statut</dt>
+    <dd class="col-sm-9">@Model.Statut</dd>
+</dl>
+<form asp-action="Delete" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdAbsentRetard" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+</form>

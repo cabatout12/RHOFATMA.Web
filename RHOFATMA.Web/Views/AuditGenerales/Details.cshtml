@@ -1,0 +1,24 @@
+@model RHOFATMA.Web.Models.TblAuditGenerale
+@{ ViewData["Title"] = "Details audit"; }
+
+<h1 class="h3 mb-3">Details audit</h1>
+<dl class="row">
+    <dt class="col-sm-3">Table</dt>
+    <dd class="col-sm-9">@Model.NomTable</dd>
+    <dt class="col-sm-3">Id enregistrement</dt>
+    <dd class="col-sm-9">@Model.IdEnregistrement</dd>
+    <dt class="col-sm-3">Action</dt>
+    <dd class="col-sm-9">@Model.ActionType</dd>
+    <dt class="col-sm-3">Champ modifie</dt>
+    <dd class="col-sm-9">@Model.ChampModifier</dd>
+    <dt class="col-sm-3">Valeur avant</dt>
+    <dd class="col-sm-9">@Model.ValeurAvant</dd>
+    <dt class="col-sm-3">Nouvelle valeur</dt>
+    <dd class="col-sm-9">@Model.NouveauValeur</dd>
+    <dt class="col-sm-3">Date action</dt>
+    <dd class="col-sm-9">@Model.DateAction.ToString("yyyy-MM-dd HH:mm")</dd>
+    <dt class="col-sm-3">User</dt>
+    <dd class="col-sm-9">@Model.User?.UserEmail</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.IdAuditGenerale" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

@@ -1,0 +1,18 @@
+@model RHOFATMA.Web.Models.TblAuditGenerale
+@{ ViewData["Title"] = "Supprimer un audit"; }
+
+<h1 class="h3">Supprimer un audit</h1>
+<p class="text-danger">Voulez-vous vraiment supprimer cet audit?</p>
+<dl class="row">
+    <dt class="col-sm-3">Table</dt>
+    <dd class="col-sm-9">@Model.NomTable</dd>
+    <dt class="col-sm-3">Action</dt>
+    <dd class="col-sm-9">@Model.ActionType</dd>
+    <dt class="col-sm-3">Date action</dt>
+    <dd class="col-sm-9">@Model.DateAction.ToString("yyyy-MM-dd HH:mm")</dd>
+</dl>
+<form asp-action="Delete" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdAuditGenerale" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+</form>

@@ -1,0 +1,18 @@
+@model RHOFATMA.Web.Models.TblDeduction
+@{ ViewData["Title"] = "Supprimer une deduction"; }
+
+<h1 class="h3">Supprimer une deduction</h1>
+<p class="text-danger">Voulez-vous vraiment supprimer cette deduction?</p>
+<dl class="row">
+    <dt class="col-sm-3">Employe</dt>
+    <dd class="col-sm-9">@Model.IdEmployeNavigation.NomEmploye @Model.IdEmployeNavigation.PrenomEmploye</dd>
+    <dt class="col-sm-3">Type deduction</dt>
+    <dd class="col-sm-9">@Model.TypeDeduction</dd>
+    <dt class="col-sm-3">Montant</dt>
+    <dd class="col-sm-9">@Model.MontantDeduction.ToString("N2")</dd>
+</dl>
+<form asp-action="Delete" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdDeduction" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+</form>

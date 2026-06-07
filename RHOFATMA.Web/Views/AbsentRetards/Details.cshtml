@@ -1,0 +1,18 @@
+@model RHOFATMA.Web.Models.TblAbsentRetard
+@{ ViewData["Title"] = "Details absence/retard"; }
+
+<h1 class="h3 mb-3">Details absence/retard</h1>
+<dl class="row">
+    <dt class="col-sm-3">Employe</dt>
+    <dd class="col-sm-9">@Model.IdEmployeNavigation.NomEmploye @Model.IdEmployeNavigation.PrenomEmploye</dd>
+    <dt class="col-sm-3">Date</dt>
+    <dd class="col-sm-9">@Model.DateRetard.ToString("yyyy-MM-dd")</dd>
+    <dt class="col-sm-3">Statut</dt>
+    <dd class="col-sm-9">@Model.Statut</dd>
+    <dt class="col-sm-3">Motif</dt>
+    <dd class="col-sm-9">@Model.Motif</dd>
+    <dt class="col-sm-3">User</dt>
+    <dd class="col-sm-9">@Model.IdUserNavigation?.UserEmail</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.IdAbsentRetard" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

@@ -1,0 +1,52 @@
+@model RHOFATMA.Web.Models.TblContrat
+@{ ViewData["Title"] = "Modifier un contrat"; }
+
+<h1 class="h3 mb-3">Modifier un contrat</h1>
+<form asp-action="Edit" class="row g-3">
+    <input type="hidden" asp-for="IdContrat" />
+    <input type="hidden" asp-for="AjouterPar" />
+    <input type="hidden" asp-for="AjouterLe" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <label asp-for="IdEmploye" class="form-label">Employe</label>
+        <select asp-for="IdEmploye" class="form-select" asp-items="ViewBag.IdEmploye">
+            <option value="">-- Selectionner --</option>
+        </select>
+        <span asp-validation-for="IdEmploye" class="text-danger"></span>
+    </div>
+    <div class="col-md-5">
+        <label asp-for="TypeContrat" class="form-label">Type contrat</label>
+        <input asp-for="TypeContrat" class="form-control" />
+        <span asp-validation-for="TypeContrat" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="DateDebut" class="form-label">Date debut</label>
+        <input asp-for="DateDebut" class="form-control" type="date" />
+        <span asp-validation-for="DateDebut" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="DateFin" class="form-label">Date fin</label>
+        <input asp-for="DateFin" class="form-control" type="date" />
+        <span asp-validation-for="DateFin" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="SalaireBase" class="form-label">Salaire base</label>
+        <input asp-for="SalaireBase" class="form-control" />
+        <span asp-validation-for="SalaireBase" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Statut" class="form-label">Statut</label>
+        <select asp-for="Statut" class="form-select">
+            <option>Actif</option>
+            <option>Inactif</option>
+            <option>Expire</option>
+            <option>Resilie</option>
+        </select>
+        <span asp-validation-for="Statut" class="text-danger"></span>
+    </div>
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+    </div>
+</form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

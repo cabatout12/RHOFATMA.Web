@@ -1,0 +1,38 @@
+@model IEnumerable<RHOFATMA.Web.Models.TblAbsentRetard>
+
+@{
+    ViewData["Title"] = "AbsentRetards";
+}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h1 class="h3 mb-0">AbsentRetards</h1>
+    <a asp-action="Create" class="btn btn-primary">Ajouter</a>
+</div>
+
+<form asp-action="Index" method="get" class="row g-2 mb-3">
+    <div class="col-md-5">
+        <input name="search" value="@ViewData["CurrentSearch"]" class="form-control" placeholder="Rechercher absence/retard" />
+    </div>
+    <div class="col-auto"><button type="submit" class="btn btn-outline-primary">Rechercher</button></div>
+    <div class="col-auto"><a asp-action="Index" class="btn btn-outline-secondary">Reinitialiser</a></div>
+</form>
+
+<table class="table table-hover align-middle">
+    <thead><tr><th>Employe</th><th>Date</th><th>Statut</th><th>Motif</th><th class="text-end">Actions</th></tr></thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IdEmployeNavigation.NomEmploye @item.IdEmployeNavigation.PrenomEmploye</td>
+            <td>@item.DateRetard.ToString("yyyy-MM-dd")</td>
+            <td>@item.Statut</td>
+            <td>@item.Motif</td>
+            <td class="text-end">
+                <a asp-action="Details" asp-route-id="@item.IdAbsentRetard" class="btn btn-sm btn-outline-secondary">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.IdAbsentRetard" class="btn btn-sm btn-outline-primary">Modifier</a>
+                <a asp-action="Delete" asp-route-id="@item.IdAbsentRetard" class="btn btn-sm btn-outline-danger">Supprimer</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
