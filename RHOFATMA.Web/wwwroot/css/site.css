@@ -31,9 +31,19 @@ body {
   min-height: 100vh;
   margin-bottom: 64px;
   color: #172033;
+  font-family: "Times New Roman", Times, serif;
   background:
     radial-gradient(circle at top left, rgba(20, 83, 45, 0.12), transparent 34rem),
     linear-gradient(180deg, #f7faf8 0%, #eef4f1 100%);
+}
+
+button,
+input,
+select,
+textarea,
+.btn,
+.navbar {
+  font-family: "Times New Roman", Times, serif;
 }
 
 .app-navbar {
@@ -138,6 +148,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .table {
   margin-bottom: 0;
+  counter-reset: row-number;
+}
+
+.table thead tr::before,
+.table tbody tr::before {
+  display: table-cell;
+  width: 4.5rem;
+  padding: 0.5rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.table thead tr::before {
+  content: "No";
+  color: #475569;
+  background: #f8fafc;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.table tbody tr::before {
+  counter-increment: row-number;
+  content: counter(row-number);
+  color: var(--app-primary-dark);
+  font-weight: 700;
+  background: rgba(232, 245, 238, 0.55);
+  text-align: center;
 }
 
 .table thead th {
@@ -175,18 +213,18 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 420px;
   align-items: center;
   padding: 3rem;
-  color: #ffffff;
+  color: var(--app-primary-dark);
   background:
-    linear-gradient(135deg, rgba(15, 61, 37, 0.94), rgba(20, 83, 45, 0.86)),
-    url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80");
+    linear-gradient(135deg, rgba(220, 252, 231, 0.86), rgba(187, 247, 208, 0.64));
   background-position: center;
   background-size: cover;
+  border: 1px solid rgba(20, 83, 45, 0.14);
   border-radius: 0.75rem;
 }
 
 .home-hero h1,
 .home-hero p {
-  color: #ffffff;
+  color: var(--app-primary-dark);
 }
 
 .home-hero p {
@@ -201,6 +239,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-actions .btn-light {
   color: var(--app-primary-dark);
+}
+
+.home-actions .btn-outline-light {
+  color: var(--app-primary-dark);
+  border-color: rgba(20, 83, 45, 0.35);
+}
+
+.home-actions .btn-outline-light:hover,
+.home-actions .btn-outline-light:focus {
+  color: #ffffff;
+  background-color: var(--app-primary);
+  border-color: var(--app-primary);
 }
 
 @media (max-width: 767.98px) {
