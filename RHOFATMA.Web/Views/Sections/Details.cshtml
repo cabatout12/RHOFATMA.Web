@@ -1,0 +1,15 @@
+@model RHOFATMA.Web.Models.TblSection
+
+@{
+    ViewData["Title"] = "Details section";
+}
+
+<h1 class="h3 mb-3">Details section</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Nom section</dt>
+    <dd class="col-sm-9">@Model.NomSection</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.IdSection" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

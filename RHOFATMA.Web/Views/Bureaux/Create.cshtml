@@ -1,0 +1,29 @@
+@model RHOFATMA.Web.Models.TblBureau
+
+@{
+    ViewData["Title"] = "Ajouter un bureau";
+}
+
+<h1 class="h3 mb-3">Ajouter un bureau</h1>
+
+<form asp-action="Create" class="row g-3">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-5">
+        <label asp-for="NomBureau" class="form-label">Nom bureau</label>
+        <input asp-for="NomBureau" class="form-control" />
+        <span asp-validation-for="NomBureau" class="text-danger"></span>
+    </div>
+    <div class="col-md-7">
+        <label asp-for="Adresse" class="form-label">Adresse</label>
+        <input asp-for="Adresse" class="form-control" />
+        <span asp-validation-for="Adresse" class="text-danger"></span>
+    </div>
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

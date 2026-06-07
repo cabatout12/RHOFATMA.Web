@@ -1,0 +1,19 @@
+@model RHOFATMA.Web.Models.TblService
+
+@{
+    ViewData["Title"] = "Supprimer un service";
+}
+
+<h1 class="h3">Supprimer un service</h1>
+<p class="text-danger">Voulez-vous vraiment supprimer ce service?</p>
+
+<dl class="row">
+    <dt class="col-sm-3">Nom service</dt>
+    <dd class="col-sm-9">@Model.NomService</dd>
+</dl>
+
+<form asp-action="Delete" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdService" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+</form>

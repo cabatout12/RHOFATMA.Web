@@ -1,0 +1,17 @@
+@model RHOFATMA.Web.Models.TblBureau
+
+@{
+    ViewData["Title"] = "Details bureau";
+}
+
+<h1 class="h3 mb-3">Details bureau</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Nom bureau</dt>
+    <dd class="col-sm-9">@Model.NomBureau</dd>
+    <dt class="col-sm-3">Adresse</dt>
+    <dd class="col-sm-9">@Model.Adresse</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.IdBureau" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

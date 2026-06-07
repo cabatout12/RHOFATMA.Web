@@ -1,0 +1,19 @@
+@model RHOFATMA.Web.Models.TblSection
+
+@{
+    ViewData["Title"] = "Supprimer une section";
+}
+
+<h1 class="h3">Supprimer une section</h1>
+<p class="text-danger">Voulez-vous vraiment supprimer cette section?</p>
+
+<dl class="row">
+    <dt class="col-sm-3">Nom section</dt>
+    <dd class="col-sm-9">@Model.NomSection</dd>
+</dl>
+
+<form asp-action="Delete" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdSection" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+</form>

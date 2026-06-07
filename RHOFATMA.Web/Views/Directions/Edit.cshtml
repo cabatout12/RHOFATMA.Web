@@ -1,0 +1,25 @@
+@model RHOFATMA.Web.Models.TblDirection
+
+@{
+    ViewData["Title"] = "Modifier une direction";
+}
+
+<h1 class="h3 mb-3">Modifier une direction</h1>
+
+<form asp-action="Edit" class="row g-3">
+    <input type="hidden" asp-for="IdDirection" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <label asp-for="NomDirection" class="form-label">Nom direction</label>
+        <input asp-for="NomDirection" class="form-control" />
+        <span asp-validation-for="NomDirection" class="text-danger"></span>
+    </div>
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

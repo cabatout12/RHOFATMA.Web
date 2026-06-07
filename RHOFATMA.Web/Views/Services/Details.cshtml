@@ -1,0 +1,15 @@
+@model RHOFATMA.Web.Models.TblService
+
+@{
+    ViewData["Title"] = "Details service";
+}
+
+<h1 class="h3 mb-3">Details service</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Nom service</dt>
+    <dd class="col-sm-9">@Model.NomService</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.IdService" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

@@ -1,0 +1,15 @@
+@model RHOFATMA.Web.Models.TblDirection
+
+@{
+    ViewData["Title"] = "Details direction";
+}
+
+<h1 class="h3 mb-3">Details direction</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Nom direction</dt>
+    <dd class="col-sm-9">@Model.NomDirection</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.IdDirection" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>
