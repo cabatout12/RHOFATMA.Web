@@ -1,0 +1,20 @@
+@model RHOFATMA.Web.Models.TblPresence
+@{ ViewData["Title"] = "Details presence"; }
+
+<h1 class="h3 mb-3">Details presence</h1>
+<dl class="row">
+    <dt class="col-sm-3">Employe</dt>
+    <dd class="col-sm-9">@Model.IdEmployeNavigation.NomEmploye @Model.IdEmployeNavigation.PrenomEmploye</dd>
+    <dt class="col-sm-3">Date</dt>
+    <dd class="col-sm-9">@Model.DatePresence.ToString("yyyy-MM-dd")</dd>
+    <dt class="col-sm-3">Heure arrivee</dt>
+    <dd class="col-sm-9">@Model.HeureArrivee?.ToString("HH:mm")</dd>
+    <dt class="col-sm-3">Heure depart</dt>
+    <dd class="col-sm-9">@Model.HeureDepart?.ToString("HH:mm")</dd>
+    <dt class="col-sm-3">Statut</dt>
+    <dd class="col-sm-9">@Model.Statut</dd>
+    <dt class="col-sm-3">Remarque</dt>
+    <dd class="col-sm-9">@Model.Remarque</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.IdPresence" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

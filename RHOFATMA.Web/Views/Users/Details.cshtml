@@ -1,0 +1,18 @@
+@model RHOFATMA.Web.Models.TblUser
+@{ ViewData["Title"] = "Details user"; }
+
+<h1 class="h3 mb-3">Details user</h1>
+<dl class="row">
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.UserEmail</dd>
+    <dt class="col-sm-3">Role</dt>
+    <dd class="col-sm-9">@Model.IdRoleNavigation?.NomRole</dd>
+    <dt class="col-sm-3">Statut</dt>
+    <dd class="col-sm-9">@Model.Statut</dd>
+    <dt class="col-sm-3">Date creation</dt>
+    <dd class="col-sm-9">@Model.DateCreation.ToString("yyyy-MM-dd HH:mm")</dd>
+    <dt class="col-sm-3">Date modification</dt>
+    <dd class="col-sm-9">@Model.DateModification?.ToString("yyyy-MM-dd HH:mm")</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.IdUser" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

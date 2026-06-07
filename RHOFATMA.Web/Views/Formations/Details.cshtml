@@ -1,0 +1,10 @@
+@model RHOFATMA.Web.Models.TblFormation
+@{ ViewData["Title"] = "Details formation"; }
+
+<h1 class="h3 mb-3">Details formation</h1>
+<dl class="row">
+    <dt class="col-sm-3">Nom formation</dt>
+    <dd class="col-sm-9">@Model.NomFormation</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.IdFormation" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

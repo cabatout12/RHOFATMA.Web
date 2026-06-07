@@ -1,0 +1,16 @@
+@model RHOFATMA.Web.Models.TblRole
+@{ ViewData["Title"] = "Supprimer un role"; }
+
+<h1 class="h3">Supprimer un role</h1>
+<p class="text-danger">Voulez-vous vraiment supprimer ce role?</p>
+<dl class="row">
+    <dt class="col-sm-3">Role</dt>
+    <dd class="col-sm-9">@Model.NomRole</dd>
+    <dt class="col-sm-3">Description</dt>
+    <dd class="col-sm-9">@Model.DescriptionRole</dd>
+</dl>
+<form asp-action="Delete" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdRole" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+</form>

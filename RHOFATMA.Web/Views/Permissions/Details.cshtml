@@ -1,0 +1,12 @@
+@model RHOFATMA.Web.Models.TblPermission
+@{ ViewData["Title"] = "Details permission"; }
+
+<h1 class="h3 mb-3">Details permission</h1>
+<dl class="row">
+    <dt class="col-sm-3">Code</dt>
+    <dd class="col-sm-9">@Model.CodePermission</dd>
+    <dt class="col-sm-3">Description</dt>
+    <dd class="col-sm-9">@Model.DescriptionPermission</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.IdPermission" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>

@@ -1,0 +1,37 @@
+@model RHOFATMA.Web.Models.TblUser
+@{ ViewData["Title"] = "Ajouter un user"; }
+
+<h1 class="h3 mb-3">Ajouter un user</h1>
+<form asp-action="Create" class="row g-3">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <label asp-for="UserEmail" class="form-label">Email</label>
+        <input asp-for="UserEmail" class="form-control" />
+        <span asp-validation-for="UserEmail" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="PasswordHash" class="form-label">Password</label>
+        <input asp-for="PasswordHash" class="form-control" type="password" />
+        <span asp-validation-for="PasswordHash" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="IdRole" class="form-label">Role</label>
+        <select asp-for="IdRole" class="form-select" asp-items="ViewBag.IdRole">
+            <option value="">-- Selectionner --</option>
+        </select>
+        <span asp-validation-for="IdRole" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Statut" class="form-label">Statut</label>
+        <select asp-for="Statut" class="form-select">
+            <option>Actif</option>
+            <option>Inactif</option>
+        </select>
+        <span asp-validation-for="Statut" class="text-danger"></span>
+    </div>
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+    </div>
+</form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

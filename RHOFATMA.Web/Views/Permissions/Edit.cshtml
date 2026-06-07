@@ -1,0 +1,23 @@
+@model RHOFATMA.Web.Models.TblPermission
+@{ ViewData["Title"] = "Modifier une permission"; }
+
+<h1 class="h3 mb-3">Modifier une permission</h1>
+<form asp-action="Edit" class="row g-3">
+    <input type="hidden" asp-for="IdPermission" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <label asp-for="CodePermission" class="form-label">Code</label>
+        <input asp-for="CodePermission" class="form-control" />
+        <span asp-validation-for="CodePermission" class="text-danger"></span>
+    </div>
+    <div class="col-md-8">
+        <label asp-for="DescriptionPermission" class="form-label">Description</label>
+        <textarea asp-for="DescriptionPermission" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="DescriptionPermission" class="text-danger"></span>
+    </div>
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+    </div>
+</form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

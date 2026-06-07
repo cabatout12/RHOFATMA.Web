@@ -1,0 +1,20 @@
+@model RHOFATMA.Web.Models.TblPrim
+@{ ViewData["Title"] = "Supprimer une prime"; }
+
+<h1 class="h3">Supprimer une prime</h1>
+<p class="text-danger">Voulez-vous vraiment supprimer cette prime?</p>
+<dl class="row">
+    <dt class="col-sm-3">Employe</dt>
+    <dd class="col-sm-9">@Model.IdEmployeNavigation.NomEmploye @Model.IdEmployeNavigation.PrenomEmploye</dd>
+    <dt class="col-sm-3">Type prime</dt>
+    <dd class="col-sm-9">@Model.TypePrim</dd>
+    <dt class="col-sm-3">Montant</dt>
+    <dd class="col-sm-9">@Model.MontantPrime.ToString("N2")</dd>
+    <dt class="col-sm-3">Date</dt>
+    <dd class="col-sm-9">@Model.DatePrim.ToString("yyyy-MM-dd")</dd>
+</dl>
+<form asp-action="Delete" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdPrim" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+</form>

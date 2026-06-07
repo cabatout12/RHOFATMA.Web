@@ -1,0 +1,18 @@
+@model RHOFATMA.Web.Models.TblFormation
+@{ ViewData["Title"] = "Modifier une formation"; }
+
+<h1 class="h3 mb-3">Modifier une formation</h1>
+<form asp-action="Edit" class="row g-3">
+    <input type="hidden" asp-for="IdFormation" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <label asp-for="NomFormation" class="form-label">Nom formation</label>
+        <input asp-for="NomFormation" class="form-control" />
+        <span asp-validation-for="NomFormation" class="text-danger"></span>
+    </div>
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Annuler</a>
+    </div>
+</form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

@@ -1,0 +1,18 @@
+@model RHOFATMA.Web.Models.TblPrim
+@{ ViewData["Title"] = "Details prime"; }
+
+<h1 class="h3 mb-3">Details prime</h1>
+<dl class="row">
+    <dt class="col-sm-3">Employe</dt>
+    <dd class="col-sm-9">@Model.IdEmployeNavigation.NomEmploye @Model.IdEmployeNavigation.PrenomEmploye</dd>
+    <dt class="col-sm-3">Type prime</dt>
+    <dd class="col-sm-9">@Model.TypePrim</dd>
+    <dt class="col-sm-3">Montant</dt>
+    <dd class="col-sm-9">@Model.MontantPrime.ToString("N2")</dd>
+    <dt class="col-sm-3">Date</dt>
+    <dd class="col-sm-9">@Model.DatePrim.ToString("yyyy-MM-dd")</dd>
+    <dt class="col-sm-3">User</dt>
+    <dd class="col-sm-9">@Model.IdUserNavigation?.UserEmail</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.IdPrim" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-outline-secondary">Retour</a>
