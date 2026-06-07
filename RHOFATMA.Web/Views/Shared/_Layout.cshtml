@@ -22,53 +22,55 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Employes" asp-action="Index">Employes</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Gestion
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="gestionDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Bureaux" asp-action="Index">Bureau</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Directions" asp-action="Index">Direction</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Services" asp-action="Index">Service</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Sections" asp-action="Index">Section</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Formations" asp-action="Index">Formation</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Postes" asp-action="Index">Poste</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">User</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Role</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="AuditGenerales" asp-action="Index">AuditGeneral</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="RolePermissions" asp-action="Index">RolePermission</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="employeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Employe
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="employeDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Employes" asp-action="Index">Employe</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Primes" asp-action="Index">Prime</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Presences" asp-action="Index">Presence</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="AbsentRetards" asp-action="Index">AbsentRetard</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="DocumentEmployes" asp-action="Index">DocumentEmploye</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="congeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Conge
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="congeDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Conges" asp-action="Index">Conge</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Permissions" asp-action="Index">Permission</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="paieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Paie
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="paieDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Paies" asp-action="Index">Paie</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Deductions" asp-action="Index">Deduction</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Directions" asp-action="Index">Directions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Services" asp-action="Index">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Sections" asp-action="Index">Sections</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bureaux" asp-action="Index">Bureaux</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Formations" asp-action="Index">Formations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Postes" asp-action="Index">Postes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Index">Roles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Primes" asp-action="Index">Primes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Presences" asp-action="Index">Presences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Permissions" asp-action="Index">Permissions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="AbsentRetards" asp-action="Index">AbsentRetards</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="AuditGenerales" asp-action="Index">AuditGeneral</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contrats" asp-action="Index">Contrats</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Deductions" asp-action="Index">Deductions</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contrats" asp-action="Index">Contrat</a>
                         </li>
                     </ul>
                 </div>
