@@ -213,9 +213,10 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 420px;
   align-items: center;
   padding: 3rem;
-  color: var(--app-primary-dark);
+  color: #ffffff;
   background:
-    linear-gradient(135deg, rgba(220, 252, 231, 0.86), rgba(187, 247, 208, 0.64));
+    linear-gradient(135deg, rgba(15, 61, 37, 0.78), rgba(20, 83, 45, 0.58)),
+    url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80");
   background-position: center;
   background-size: cover;
   border: 1px solid rgba(20, 83, 45, 0.14);
@@ -224,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-hero h1,
 .home-hero p {
-  color: var(--app-primary-dark);
+  color: #ffffff;
 }
 
 .home-hero p {
@@ -242,8 +243,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-actions .btn-outline-light {
-  color: var(--app-primary-dark);
-  border-color: rgba(20, 83, 45, 0.35);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.72);
 }
 
 .home-actions .btn-outline-light:hover,
