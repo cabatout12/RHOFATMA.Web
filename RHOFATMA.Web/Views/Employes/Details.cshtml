@@ -1,0 +1,34 @@
+@model RHOFATMA.Web.Models.TblEmploye
+
+@{
+    ViewData["Title"] = "Details employe";
+}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <h1 class="h3 mb-0">@Model.NomEmploye @Model.PrenomEmploye</h1>
+    <div class="d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.IdEmploye" class="btn btn-primary">Modifier</a>
+        <a asp-action="Index" class="btn btn-outline-secondary">Retour</a>
+    </div>
+</div>
+
+<dl class="row">
+    <dt class="col-sm-3">Code</dt>
+    <dd class="col-sm-9">@Model.CodeEmploye</dd>
+    <dt class="col-sm-3">CIN / NIF</dt>
+    <dd class="col-sm-9">@Model.CinNif</dd>
+    <dt class="col-sm-3">Telephone</dt>
+    <dd class="col-sm-9">@Model.Telephone</dd>
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+    <dt class="col-sm-3">Poste</dt>
+    <dd class="col-sm-9">@Model.IdPosteNavigation?.NomPoste</dd>
+    <dt class="col-sm-3">Service</dt>
+    <dd class="col-sm-9">@Model.IdServiceNavigation?.NomService</dd>
+    <dt class="col-sm-3">Direction</dt>
+    <dd class="col-sm-9">@Model.IdDirectionNavigation?.NomDirection</dd>
+    <dt class="col-sm-3">Bureau</dt>
+    <dd class="col-sm-9">@Model.IdBureauNavigation?.NomBureau</dd>
+    <dt class="col-sm-3">Statut</dt>
+    <dd class="col-sm-9">@Model.Statut</dd>
+</dl>

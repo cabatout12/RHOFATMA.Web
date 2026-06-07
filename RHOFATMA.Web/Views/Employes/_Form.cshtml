@@ -1,0 +1,120 @@
+@model RHOFATMA.Web.Models.TblEmploye
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<div class="col-md-3">
+    <label asp-for="CodeEmploye" class="form-label">Code</label>
+    <input asp-for="CodeEmploye" class="form-control" />
+    <span asp-validation-for="CodeEmploye" class="text-danger"></span>
+</div>
+<div class="col-md-3">
+    <label asp-for="CinNif" class="form-label">CIN / NIF</label>
+    <input asp-for="CinNif" class="form-control" />
+</div>
+<div class="col-md-3">
+    <label asp-for="NomEmploye" class="form-label">Nom</label>
+    <input asp-for="NomEmploye" class="form-control" />
+    <span asp-validation-for="NomEmploye" class="text-danger"></span>
+</div>
+<div class="col-md-3">
+    <label asp-for="PrenomEmploye" class="form-label">Prenom</label>
+    <input asp-for="PrenomEmploye" class="form-control" />
+    <span asp-validation-for="PrenomEmploye" class="text-danger"></span>
+</div>
+
+<div class="col-md-3">
+    <label asp-for="DateNaissance" class="form-label">Date naissance</label>
+    <input asp-for="DateNaissance" type="date" class="form-control" />
+</div>
+<div class="col-md-3">
+    <label asp-for="LieuNaissance" class="form-label">Lieu naissance</label>
+    <input asp-for="LieuNaissance" class="form-control" />
+</div>
+<div class="col-md-2">
+    <label asp-for="Sexe" class="form-label">Sexe</label>
+    <select asp-for="Sexe" class="form-select">
+        <option value="">Choisir</option>
+        <option value="M">M</option>
+        <option value="F">F</option>
+    </select>
+</div>
+<div class="col-md-4">
+    <label asp-for="Adresse" class="form-label">Adresse</label>
+    <input asp-for="Adresse" class="form-control" />
+</div>
+
+<div class="col-md-3">
+    <label asp-for="Telephone" class="form-label">Telephone</label>
+    <input asp-for="Telephone" class="form-control" />
+</div>
+<div class="col-md-3">
+    <label asp-for="Email" class="form-label">Email</label>
+    <input asp-for="Email" class="form-control" />
+</div>
+<div class="col-md-3">
+    <label asp-for="DateEmbaucheEmploye" class="form-label">Date embauche</label>
+    <input asp-for="DateEmbaucheEmploye" type="date" class="form-control" />
+</div>
+<div class="col-md-3">
+    <label asp-for="Salaire" class="form-label">Salaire</label>
+    <input asp-for="Salaire" class="form-control" />
+</div>
+
+<div class="col-md-4">
+    <label asp-for="IdPoste" class="form-label">Poste</label>
+    <select asp-for="IdPoste" class="form-select" asp-items="ViewBag.IdPoste">
+        <option value="">Choisir</option>
+    </select>
+</div>
+<div class="col-md-4">
+    <label asp-for="IdService" class="form-label">Service</label>
+    <select asp-for="IdService" class="form-select" asp-items="ViewBag.IdService">
+        <option value="">Choisir</option>
+    </select>
+</div>
+<div class="col-md-4">
+    <label asp-for="IdDirection" class="form-label">Direction</label>
+    <select asp-for="IdDirection" class="form-select" asp-items="ViewBag.IdDirection">
+        <option value="">Choisir</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label asp-for="IdSection" class="form-label">Section</label>
+    <select asp-for="IdSection" class="form-select" asp-items="ViewBag.IdSection">
+        <option value="">Choisir</option>
+    </select>
+</div>
+<div class="col-md-4">
+    <label asp-for="IdBureau" class="form-label">Bureau</label>
+    <select asp-for="IdBureau" class="form-select" asp-items="ViewBag.IdBureau">
+        <option value="">Choisir</option>
+    </select>
+</div>
+<div class="col-md-4">
+    <label asp-for="IdFormation" class="form-label">Formation</label>
+    <select asp-for="IdFormation" class="form-select" asp-items="ViewBag.IdFormation">
+        <option value="">Choisir</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label asp-for="Diplome" class="form-label">Diplome</label>
+    <input asp-for="Diplome" class="form-control" />
+</div>
+<div class="col-md-4">
+    <label asp-for="Statut" class="form-label">Statut</label>
+    <select asp-for="Statut" class="form-select">
+        <option value="Actif">Actif</option>
+        <option value="Inactif">Inactif</option>
+        <option value="Suspendu">Suspendu</option>
+        <option value="Demissionne">Demissionne</option>
+        <option value="Revoque">Revoque</option>
+    </select>
+</div>
+<div class="col-md-4 d-flex align-items-end">
+    <div class="form-check">
+        <input asp-for="IsApprouve" class="form-check-input" />
+        <label asp-for="IsApprouve" class="form-check-label">Approuve</label>
+    </div>
+</div>

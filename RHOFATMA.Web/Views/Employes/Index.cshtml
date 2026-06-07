@@ -1,0 +1,64 @@
+@model IEnumerable<RHOFATMA.Web.Models.TblEmploye>
+
+@{
+    ViewData["Title"] = "Employes";
+}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+        <h1 class="h3 mb-1">Employes</h1>
+        <p class="text-muted mb-0">Gestion des dossiers employes.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">Ajouter</a>
+</div>
+
+<form asp-action="Index" method="get" class="row g-2 mb-3">
+    <div class="col-md-6 col-lg-4">
+        <input name="search" value="@ViewData["CurrentSearch"]" class="form-control" placeholder="Rechercher un employe" />
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-outline-primary">Rechercher</button>
+    </div>
+    <div class="col-auto">
+        <a asp-action="Index" class="btn btn-outline-secondary">Reinitialiser</a>
+    </div>
+</form>
+
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Nom complet</th>
+                <th>Poste</th>
+                <th>Service</th>
+                <th>Bureau</th>
+                <th>Statut</th>
+                <th class="text-end">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CodeEmploye</td>
+                <td>
+                    <div class="fw-semibold">@item.NomEmploye @item.PrenomEmploye</div>
+                    <div class="text-muted small">@item.Email</div>
+                </td>
+                <td>@item.IdPosteNavigation?.NomPoste</td>
+                <td>@item.IdServiceNavigation?.NomService</td>
+                <td>@item.IdBureauNavigation?.NomBureau</td>
+                <td><span class="badge text-bg-light">@item.Statut</span></td>
+                <td class="text-end">
+                    <div class="btn-group btn-group-sm" role="group">
+                        <a asp-action="Details" asp-route-id="@item.IdEmploye" class="btn btn-outline-secondary">Details</a>
+                        <a asp-action="Edit" asp-route-id="@item.IdEmploye" class="btn btn-outline-primary">Modifier</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdEmploye" class="btn btn-outline-danger">Supprimer</a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
