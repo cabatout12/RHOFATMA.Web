@@ -8,8 +8,18 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+:root {
+  --app-primary: #14532d;
+  --app-primary-dark: #0f3d25;
+  --app-accent: #f59e0b;
+  --app-surface: #ffffff;
+  --app-border: #dbe3ea;
+  --app-muted: #64748b;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-select:focus, .form-check-input:focus {
+  border-color: rgba(20, 83, 45, 0.45);
+  box-shadow: 0 0 0 0.2rem rgba(20, 83, 45, 0.16);
 }
 
 html {
@@ -18,5 +28,190 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  min-height: 100vh;
+  margin-bottom: 64px;
+  color: #172033;
+  background:
+    radial-gradient(circle at top left, rgba(20, 83, 45, 0.12), transparent 34rem),
+    linear-gradient(180deg, #f7faf8 0%, #eef4f1 100%);
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, var(--app-primary-dark), var(--app-primary));
+}
+
+.navbar-brand {
+  letter-spacing: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 500;
+  padding-inline: 0.85rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dropdown-menu {
+  border: 1px solid rgba(15, 61, 37, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.45rem;
+}
+
+.dropdown-item {
+  border-radius: 0.4rem;
+  color: #203047;
+  font-weight: 500;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: var(--app-primary-dark);
+  background-color: #edf7f1;
+}
+
+.app-shell {
+  max-width: 1320px;
+  margin: 1.5rem auto 2.5rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(219, 227, 234, 0.9);
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.08);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #122033;
+  font-weight: 700;
+}
+
+.text-muted {
+  color: var(--app-muted) !important;
+}
+
+.btn {
+  border-radius: 0.45rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--app-primary);
+  border-color: var(--app-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--app-primary-dark);
+  border-color: var(--app-primary-dark);
+}
+
+.btn-outline-primary {
+  color: var(--app-primary);
+  border-color: var(--app-primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #ffffff;
+  background-color: var(--app-primary);
+  border-color: var(--app-primary);
+}
+
+.form-control,
+.form-select {
+  border-color: var(--app-border);
+  border-radius: 0.45rem;
+}
+
+.table-responsive {
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: 0.75rem;
+  background: var(--app-surface);
+  box-shadow: 0 0.5rem 1.25rem rgba(15, 23, 42, 0.06);
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  color: #475569;
+  background: #f8fafc;
+  border-bottom-color: var(--app-border);
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+  background-color: #f8fcfa;
+}
+
+.badge.text-bg-light {
+  color: var(--app-primary-dark) !important;
+  background-color: #e8f5ee !important;
+  border: 1px solid #cfe8d9;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 1px solid rgba(219, 227, 234, 0.9);
+}
+
+.home-hero {
+  display: grid;
+  gap: 1.5rem;
+  min-height: 420px;
+  align-items: center;
+  padding: 3rem;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(15, 61, 37, 0.94), rgba(20, 83, 45, 0.86)),
+    url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80");
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.75rem;
+}
+
+.home-hero h1,
+.home-hero p {
+  color: #ffffff;
+}
+
+.home-hero p {
+  max-width: 680px;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.home-actions .btn-light {
+  color: var(--app-primary-dark);
+}
+
+@media (max-width: 767.98px) {
+  .app-shell {
+    margin-top: 1rem;
+    padding: 0.85rem;
+    border-radius: 0.65rem;
+  }
+
+  .home-hero {
+    min-height: 360px;
+    padding: 1.5rem;
+  }
 }

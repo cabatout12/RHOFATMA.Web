@@ -10,23 +10,23 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RHOFATMA</a>
+        <nav class="navbar navbar-expand-lg navbar-dark app-navbar shadow-sm">
+            <div class="container-fluid px-3 px-lg-4">
+                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">RHOFATMA</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="gestionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Gestion
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="gestionDropdown">
+                            <ul class="dropdown-menu shadow-sm" aria-labelledby="gestionDropdown">
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Bureaux" asp-action="Index">Bureau</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Directions" asp-action="Index">Direction</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Services" asp-action="Index">Service</a></li>
@@ -40,10 +40,10 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="employeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="employeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Employe
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="employeDropdown">
+                            <ul class="dropdown-menu shadow-sm" aria-labelledby="employeDropdown">
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Employes" asp-action="Index">Employe</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Primes" asp-action="Index">Prime</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Presences" asp-action="Index">Presence</a></li>
@@ -52,39 +52,39 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="congeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="congeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Conge
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="congeDropdown">
+                            <ul class="dropdown-menu shadow-sm" aria-labelledby="congeDropdown">
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Conges" asp-action="Index">Conge</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Permissions" asp-action="Index">Permission</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="paieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="paieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Paie
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="paieDropdown">
+                            <ul class="dropdown-menu shadow-sm" aria-labelledby="paieDropdown">
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Paies" asp-action="Index">Paie</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Deductions" asp-action="Index">Deduction</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contrats" asp-action="Index">Contrat</a>
+                            <a class="nav-link" asp-area="" asp-controller="Contrats" asp-action="Index">Contrat</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container-fluid px-3 px-lg-4">
+        <main role="main" class="app-shell">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="footer text-muted">
+        <div class="container-fluid px-3 px-lg-4">
             &copy; 2026 - RHOFATMA
         </div>
     </footer>

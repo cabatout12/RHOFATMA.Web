@@ -1,8 +1,53 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Accueil";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="home-hero">
+    <div>
+        <p class="text-uppercase fw-semibold mb-2">Gestion RH</p>
+        <h1 class="display-5 fw-bold mb-3">Bienvenue sur RHOFATMA</h1>
+        <p class="lead mb-4">
+            Une interface simple pour organiser les employes, la presence, les conges, la paie et les contrats.
+        </p>
+        <div class="home-actions">
+            <a class="btn btn-light btn-lg" asp-controller="Employes" asp-action="Index">Employes</a>
+            <a class="btn btn-outline-light btn-lg" asp-controller="Presences" asp-action="Index">Presences</a>
+            <a class="btn btn-outline-light btn-lg" asp-controller="Contrats" asp-action="Index">Contrats</a>
+        </div>
+    </div>
+</section>
+
+<section class="row g-3 mt-3">
+    <div class="col-md-6 col-xl-3">
+        <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+            <div class="text-muted small text-uppercase fw-semibold mb-2">Gestion</div>
+            <h2 class="h5">Structure</h2>
+            <p class="text-muted mb-3">Bureaux, directions, services, sections et postes.</p>
+            <a class="btn btn-sm btn-outline-primary" asp-controller="Bureaux" asp-action="Index">Ouvrir</a>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+            <div class="text-muted small text-uppercase fw-semibold mb-2">Employe</div>
+            <h2 class="h5">Dossiers RH</h2>
+            <p class="text-muted mb-3">Employes, primes, presences et documents.</p>
+            <a class="btn btn-sm btn-outline-primary" asp-controller="Employes" asp-action="Index">Ouvrir</a>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+            <div class="text-muted small text-uppercase fw-semibold mb-2">Conge</div>
+            <h2 class="h5">Demandes</h2>
+            <p class="text-muted mb-3">Suivi des conges et permissions.</p>
+            <a class="btn btn-sm btn-outline-primary" asp-controller="Permissions" asp-action="Index">Ouvrir</a>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="p-3 bg-white border rounded-3 h-100 shadow-sm">
+            <div class="text-muted small text-uppercase fw-semibold mb-2">Paie</div>
+            <h2 class="h5">Traitement</h2>
+            <p class="text-muted mb-3">Paie, deductions et suivi des contrats.</p>
+            <a class="btn btn-sm btn-outline-primary" asp-controller="Deductions" asp-action="Index">Ouvrir</a>
+        </div>
+    </div>
+</section>
